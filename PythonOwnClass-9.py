@@ -1,3 +1,6 @@
+# Sport Types
+
+# List for valid sport types
 valid_sport_types = [
     'Football', 'Basketball', 'Baseball', 'Soccer', 'Tennis', 'Volleyball', 'Cricket',
     'Rugby', 'Hockey', 'Golf', 'Swimming', 'Cycling', 'Boxing', 'MMA', 'Running',
@@ -21,6 +24,7 @@ valid_sport_types = [
 sport_types = []
 
 
+# Building object Sport
 class Sport:
     def __init__(self, type=None):
         if type and type in valid_sport_types:  #In Python, any non-zero number,
@@ -79,6 +83,7 @@ class Sport:
         self.display_sport_type()
 
 
+# Loop for calling the object functions until user decides to stop using it
 while True:
     user = input('\nType in:\n'
                  '"1" To see the list of sports\n'
@@ -88,15 +93,30 @@ while True:
                  '"0" To exit\n'
                  '::: ')
     if user == '1':
+
+        # Calling object's display function
         Sport().display_sport_type()
+
     elif user == '2':
+
+        # Calling object's add function
         Sport().add_sport_type()
+
     elif user == '3':
+
+        # Calling object's delete function
         Sport().delete_sport_type()
+
     elif user == '4':
+
+        # Calling object's edit function
         Sport().replace_sport_type()
+
     elif user == '0':
+
+        # Exiting the program
         print('\nExit')
         break
+
     else:
         print('\nError: invalid option!')
