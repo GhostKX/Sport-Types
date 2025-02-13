@@ -1,20 +1,20 @@
-# School Management System
+# Sport Types Management System
 
-A Python-based command-line school management system to manage class assignments. This system allows you to add, delete, edit, and display class details, including class number, letter, and room number.
+A Python-based command-line system to manage a collection of sport types. This system allows you to add, delete, edit, and display sport types from a predefined list of valid sports.
 
 ## Features
 
-- **Class Management**:  
-  - Add new classes and assign them to rooms.  
-  - Delete existing class records by class number, letter, and room number.  
-  - Edit class details (class number, letter, and room number).  
-  - Display all current classes with their details.
+- **Sport Management**:
+  - Add new sports to the list.
+  - Delete existing sports from the list.
+  - Edit sport types by replacing one with another.
+  - Display all current sports in the system.
 
-- **Room Availability Check**:  
-  - Prevent assigning a class to a room that is already occupied.
+- **Sport Type Validation**:
+  - Ensure only valid sport types can be added, based on a predefined list of supported sports.
 
-- **User-Friendly Interface**:  
-  - Easy-to-follow, interactive menu for managing school classes.
+- **User-Friendly Interface**:
+  - An interactive and easy-to-follow menu for managing sport types.
 
 ## Requirements
 
@@ -23,10 +23,10 @@ A Python-based command-line school management system to manage class assignments
 
 ## How to Run
 
-1. Clone or download this repository to your local machine.  
-2. Open your terminal or command prompt.  
-3. Navigate to the directory where the script is located.  
-4. Run the script with the following command:  
+1. Clone or download this repository to your local machine.
+2. Open your terminal or command prompt.
+3. Navigate to the directory where the script is located.
+4. Run the script with the following command:
 
 ```bash
 python main.py
@@ -34,51 +34,61 @@ python main.py
 
 ## Usage
 
-The system provides the following options for class management:
+The system provides the following options for sport management:
 
-- **Add**: Add a new class with a number, letter, and room number.
-- **Delete**: Remove an existing class by entering the class number, letter, and room number.
-- **Edit**: Modify the details of an existing class.
-- **Show**: Display all current classes and their room assignments.
+- **Add**:  Add a new sport type.
+- **Delete**: Remove an existing sport type.
+- **Edit**: Replace a sport type with a new one.
+- **Show**: Display all current sport types.
 - **Exit**: Exit the program.
 
 ## Example Usage Scenario
 ```
 **************************************************
-Welcome to the School Management System!
+Welcome to the Sport Types Management System!
 
 Type in:
-"Add" to add a new class.
-"Delete" to delete a class.
-"Edit" to edit class details.
-"Show" to display all classes.
-"Exit" to leave the system.
-::: Add
+"1" To see the list of sports
+"2" To add a new type of sport
+"3" To delete a type of sport
+"4" To replace a type of sport
+"0" To exit
+::: 2
 
-Type in the class number: 101
-Type in the class letter: A
-Type in the class room number: 202
+Type in a sport type to add: Tennis
 
-Class "101A" added to room number "202".
+"Tennis" sport type successfully added!
 ------------------------------------------------
-Classes:
+List of Sports:
 -------------------------------------
-ID         Number     Letter    Room
+ID         Name
 -------------------------------------
-1.         101        A         202
+1.         Tennis    
 -------------------------------------
-Total number of classes: 1.
+Total number of sports: 1.
 
 ------------------------------------------------
 ```
 
-## Code Structure 
+## Code Structure
 
-- **Class Data**: Class details (class number, letter, and room number) are stored in dictionaries, with separate dictionaries for each property (number, letter, room) and a combined dictionary ```class_all``` for easy management.
-- **Room Management:**: The system ensures rooms are not double-booked by checking the availability of the room before assigning a class to it.
+### Sport Type Management
+
+- The sport types are managed in the `sport_types` list, where sports are added, removed, or replaced as per the user's commands.
+- A predefined list, `valid_sport_types`, ensures that only recognized sport types can be added. If a user tries to add an invalid sport type, the system will reject the input.
+
+### Class Implementation
+
+- The system is implemented using a `Sport` class, which contains various methods to manage the sport types:
+  - **`add_sport_type()`**: Adds a new sport type to the list after validating it against the `valid_sport_types` list.
+  - **`delete_sport_type()`**: Deletes an existing sport type from the list by checking if it exists.
+  - **`replace_sport_type()`**: Replaces an existing sport type with a new one.
+  - **`display_sport_type()`**: Displays the list of currently available sport types, along with their IDs.
+  
+Each of these methods interacts with the `sport_types` list and provides a simple command-line interface for the user to manage the list of sport types.
 
 ## Author
 
 - Developed by **GhostKX**
-- GitHub: **[GhostKX](https://github.com/GhostKX/School-Management-System)**
+- GitHub: **[GhostKX](https://github.com/GhostKX/Sport-Types)**
 
